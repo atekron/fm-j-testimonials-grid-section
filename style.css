@@ -18,5 +18,133 @@
 }
 
 body {
+  background-color: var(--light-grayish-blue);
+  font-weight: 500;
+  /* font-size: 13px; */
   font-family: "Barlow Semi Condensed", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  margin: 4rem 2rem;
+  min-width: 300px;
+}
+
+.card {
+  margin: 2rem 1rem;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+}
+
+.card__header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.card__avatar img {
+  border-radius: 50%;
+  border: 0.2rem solid rgba(255, 255, 255, 25%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__info {
+  margin-left: 1rem;
+}
+
+.card__status {
+  opacity: 0.5;
+}
+
+.card__title {
+  margin: 1.5rem auto;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.card__text {
+  font-weight: 500;
+  opacity: 0.7;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.card-1 {
+  background-color: var(--moderate-violet);
+  background-image: url("/images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 3rem;
+  background-size: 10rem auto;
+  color: var(--white);
+}
+.card-2 {
+  background-color: var(--very-dark-grayish-blue);
+  color: var(--white);
+}
+.card-3 {
+  background-color: var(--white);
+  color: var(--very-dark-grayish-blue);
+}
+.card-4 {
+  background-color: var(--very-dark-blackish-blue);
+  color: var(--white);
+}
+.card-5 {
+  background-color: var(--white);
+  color: var(--very-dark-grayish-blue);
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    margin: 4rem auto;
+    width: 80%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    margin: 0rem;
+    padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    margin: auto;
+    width: 80%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "a a b e"
+      "c d d e";
+  }
+
+  .card {
+    margin: 0rem;
+    padding: 2rem;
+  }
+
+  .card-1 {
+    grid-area: a;
+  }
+  .card-2 {
+    grid-area: b;
+  }
+  .card-3 {
+    grid-area: c;
+  }
+  .card-4 {
+    grid-area: d;
+  }
+  .card-5 {
+    grid-area: e;
+  }
 }
